@@ -18,6 +18,8 @@ LDFLAGS += -shared
 
 ifndef CPU_ONLY
 LDFLAGS += -Wl,-rpath=/usr/lib/nvidia-415 -L/usr/lib/nvidia-415 -lnvcuvid # nvcuvid
+else
+LDFLAGS += -Wl,-rpath=$(PROJECT_ROOT)/lib/nvcuvid -L$(PROJECT_ROOT)/lib/nvcuvid -lnvcuvid
 endif
 
 # Project includes
